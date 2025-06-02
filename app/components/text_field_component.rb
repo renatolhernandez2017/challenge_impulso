@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class TextFieldComponent < ViewComponent::Base
-  def initialize(form:, field_name:, type: nil, label: nil, data: nil, disabled: nil, error_message: nil)
+  def initialize(form:, field_name:, type: nil, label: nil, data: nil, readonly: nil, error_message: nil)
     @form = form
     @field_name = field_name
     @type = type
     @data = data
-    @disabled = disabled
+    @readonly = readonly
 
     # format_date_field if @type.present? && @type == "date"
 

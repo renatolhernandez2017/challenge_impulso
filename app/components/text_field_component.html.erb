@@ -1,6 +1,6 @@
 <div class="my-3">
   <%= @form.label @field_name, @label, class: "text-black" %>
-  <%= @form.hidden_field @field_name if @disabled.present? %>
-  <%= @form.text_field @field_name, type: "#{@type if @type.present?}", min: 0, class: "form-control #{'input-error' if @error_message.present?}", data: @data, disabled: @disabled %>
+  <%= @form.hidden_field @field_name if @readonly.present? %>
+  <%= @form.text_field @field_name, type: "#{@type if @type.present?}", min: 0, class: "form-control #{'input-error' if @error_message.present?}", data: @data, readonly: @readonly %>
   <p class="text-sm text-red-500"><%= @error_message.join(", ") if @error_message.present? %></p>
 </div>

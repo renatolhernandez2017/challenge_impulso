@@ -13,13 +13,7 @@
     </div>
 
     <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-      <div data-number-field class="<%= contact.email? ? 'd-none' : 'd-block' %>">
-        <%= render TextFieldComponent.new(form: f, field_name: :value, label: "Número", data: { mask_target: "mobileMask" }, error_message: contact.errors[:value]) %>
-      </div>
-
-      <div data-email-field class="<%= contact.email? ? 'd-block' : 'd-none' %>">
-        <%= render TextFieldComponent.new(form: f, field_name: :value, label: "E-mail", error_message: contact.errors[:value]) %>
-      </div>
+      <%= render TextFieldComponent.new(form: f, field_name: :value, label: "Valor do tipo escolhido", error_message: contact.errors[:value]) %>
     </div>
   </div>
 

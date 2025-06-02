@@ -8666,12 +8666,14 @@ var hello_controller_default = class extends Controller {
 
 // app/javascript/controllers/inss_controller.js
 var inss_controller_default = class extends Controller {
-  static targets = ["input", "result"];
+  static targets = ["input", "result", "resultHidden"];
   async updateDiscount() {
     const salary = this.inputTarget.value;
     if (!salary) {
       this.resultTarget.textContent = "";
       this.resultTarget.value = "";
+      this.resultHiddenTarget.textContent = "";
+      this.resultHiddenTarget.value = "";
       return;
     }
     try {
@@ -8683,9 +8685,12 @@ var inss_controller_default = class extends Controller {
       const data = await response.json();
       this.resultTarget.value = data.discount;
       this.resultTarget.textContent = `Desconto: R$ ${data.discount}`;
+      this.resultHiddenTarget.value = data.discount;
+      this.resultHiddenTarget.textContent = `Desconto: R$ ${data.discount}`;
     } catch (error2) {
       console.error("Erro ao calcular desconto INSS", error2);
       this.resultTarget.textContent = "Erro ao calcular desconto";
+      this.resultHiddenTarget.textContent = "Erro ao calcular desconto";
     }
   }
 };
@@ -12253,15 +12258,18 @@ application.register("upload", upload_controller_default);
 Turbo.StreamActions.redirect = function() {
   Turbo.visit(this.target);
 };
-document.addEventListener("turbo:load", () => {
-  document.querySelectorAll("select[name*='[contact_type]']").forEach((select) => {
-    const wrapper = select.closest("[data-controller='contact-type']");
+document.addEventListener("turbo:load", initContactTypeFields);
+document.addEventListener("turbo:frame-load", initContactTypeFields);
+function initContactTypeFields() {
+  document.querySelectorAll("[data-controller='contact-type']").forEach((wrapper) => {
+    const select = wrapper.querySelector("select[name*='[contact_type]']");
     const emailField = wrapper.querySelector("[data-email-field]");
     const numberField = wrapper.querySelector("[data-number-field]");
-    if (!emailField || !numberField)
+    if (!select || !emailField || !numberField)
       return;
     function toggleFields() {
-      if (select.value === "email") {
+      const value = select.value || wrapper.dataset.contactTypeInitialValue;
+      if (value === "email") {
         emailField.classList.remove("d-none");
         numberField.classList.add("d-none");
       } else {
@@ -12272,7 +12280,7 @@ document.addEventListener("turbo:load", () => {
     toggleFields();
     select.addEventListener("change", toggleFields);
   });
-});
+}
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:
