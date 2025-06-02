@@ -8657,10 +8657,17 @@ var contact_type_controller_default = class extends Controller {
   // }
 };
 
-// app/javascript/controllers/hello_controller.js
-var hello_controller_default = class extends Controller {
+// app/javascript/controllers/home_controller.js
+var home_controller_default = class extends Controller {
   connect() {
-    this.element.textContent = "Hello World!";
+    setTimeout(() => {
+      this.element.classList.add("hidden");
+    }, this.element.dataset.homeTimeoutValue || 1e4);
+    setTimeout(() => this.close(), this.element.dataset.homeTimeoutValue || 1e4);
+  }
+  close() {
+    this.element.classList.add("opacity-0", "transition-opacity", "duration-500");
+    setTimeout(() => this.element.remove(), 500);
   }
 };
 
@@ -12248,7 +12255,7 @@ var upload_controller_default = class extends Controller {
 application.register("auto-expand-textarea", auto_expand_textarea_controller_default);
 application.register("autosubmitselect", autosubmitselect_controller_default);
 application.register("contact-type", contact_type_controller_default);
-application.register("hello", hello_controller_default);
+application.register("home", home_controller_default);
 application.register("inss", inss_controller_default);
 application.register("mask", mask_controller_default);
 application.register("nested-form", nested_form_controller_default);

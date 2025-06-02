@@ -11,10 +11,6 @@ class Public::ProponentsController < ApplicationController
   def create
     @proponent = Proponent.new(proponent_params)
 
-    p "2222" * 50
-    p params
-    p "2222" * 50
-
     if @proponent.save
       flash[:success] = "Cadastro realizado com sucesso!"
       render turbo_stream: turbo_stream.action(:redirect, public_proponents_path)

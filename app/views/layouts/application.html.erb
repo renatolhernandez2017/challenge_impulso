@@ -20,6 +20,17 @@
   </head>
 
   <body>
+    <div id="flash-message" data-controller="home" data-home-timeout-value="6000" class="position-fixed w-100 z-3" style="top: 0; left: 0;">
+      <% flash.each do |type, message| %>
+        <% bootstrap_class = { notice: "alert-info", success: "alert-success", error: "alert-danger", alert: "alert-warning" }[type.to_sym] || "alert-info" %>
+
+        <div role="alert" class="alert <%= bootstrap_class %> alert-dismissible fade show mx-auto mt-4 shadow-sm w-100" style="max-width: 600px;">
+          <span><%= message %></span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-action="click->home#close"></button>
+        </div>
+      <% end %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

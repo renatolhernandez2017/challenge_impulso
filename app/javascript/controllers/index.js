@@ -13,8 +13,8 @@ application.register("autosubmitselect", AutosubmitselectController)
 import ContactTypeController from "./contact_type_controller"
 application.register("contact-type", ContactTypeController)
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import HomeController from "./home_controller"
+application.register("home", HomeController)
 
 import InssController from "./inss_controller"
 application.register("inss", InssController)
