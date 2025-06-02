@@ -1,14 +1,8 @@
-<div class="row">
-  <div class="col-2"></div>
-
-  <div class="col-8">
-    <div class="card">
-      <div class="card-body">
-        <h1>Cadastro de Proponente</h1>
-        <%= render "form", proponent: @proponent %>
-      </div>
+<div class="d-flex justify-content-center my-5">
+  <div class="card" style="min-width: 200px; max-width: 1000px; width: 100%;">
+    <div class="card-body">
+      <h1 class="text-center my-4 fs-4 fw-bold">Cadastro de Proponente</h1>
+      <%= render "form", proponent: @proponent, btn_save: "Salvar" %>
     </div>
   </div>
-
-  <div class="col-2"></div>
 </div>

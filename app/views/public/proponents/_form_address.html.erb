@@ -1,0 +1,29 @@
+<div id="address-fields">
+  <h3 class="text-center my-4 fs-4 fw-bold">Endereço</h3>
+
+  <section class="row">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+      <%= render TextFieldComponent.new(form: address, field_name: :zip_code, data: { mask_target: "cepMask" }, label: "Cep") %>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+      <%= render TextFieldComponent.new(form: address, field_name: :street, label: "Endereço") %>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+      <%= render TextFieldComponent.new(form: address, field_name: :number, label: "Número", type: "number") %>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <%= render TextFieldComponent.new(form: address, field_name: :neighborhood, label: "Bairro") %>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <%= render TextFieldComponent.new(form: address, field_name: :city, label: "Cidade") %>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <%= render TextFieldComponent.new(form: address, field_name: :state, label: "Estado", data: { mask_target: "ufMask" }) %>
+    </div>
+  </section>
+</div>

@@ -1,25 +1,35 @@
 <%= turbo_frame_tag 'form_proponent' do %>
-  <%= form_with model: proponent, url: proponent.persisted? ? public_proponents_path : public_proponents_path(proponent), data: {controller: "inss"} do |f| %>
-    <p><%= f.label :name %><br><%= f.text_field :name %></p>
-    <p><%= f.label :document %><br><%= f.text_field :document %></p>
-    <p><%= f.label :birth_date %><br><%= f.date_field :birth_date %></p>
-    <p><%= f.label :salary %><br><%= f.number_field :salary, step: 0.01, id: "salary-input" %></p>
-    <p><%= f.label :inss_discount %><br><%= f.number_field :inss_discount, readonly: true, id: "inss-discount" %></p>
+  <%= form_with model: proponent, url: proponent.persisted? ? public_proponents_path : public_proponents_path(proponent), data: {controller: "inss mask"} do |f| %>
+    <section class="row">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Nome", error_message: proponent.errors.messages[:name]) %>
+      </div>
 
-    <h3>Endereço</h3>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
+        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Documento", error_message: proponent.errors.messages[:document]) %>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Data de Nascimento", type: "date", error_message: proponent.errors.messages[:birth_date]) %>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Salário", data: { mask_target: "moneyMask" }, error_message: proponent.errors.messages[:salary]) %>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Desconto do INSS", data: { mask_target: "moneyMask" }, disabled: true, error_message: proponent.errors.messages[:inss_discount]) %>
+      </div>
+    </section>
+
     <%= f.fields_for :addresses do |address| %>
-      <p><%= address.label :street %><br><%= address.text_field :street %></p>
+      <% render "form_address", address: address %>
     <% end %>
 
-    <h3>Contatos</h3>
     <%= f.fields_for :contacts do |contact| %>
-      <p>
-        <%= contact.label :contact_type %>
-        <%#= contact.select :contact_type, Contact.contact_types.keys.map { |k| [k.humanize, k] } %>
-        <%= contact.text_field :value %>
-      </p>
+      <% render "form_contact", contact: contact %>
     <% end %>
 
-    <%= f.submit "Cadastrar" %>
+    <%= render ButtonComponent.new(form: f, label: btn_save) %>
   <% end %>
 <% end %>
