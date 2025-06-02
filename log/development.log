@@ -1,0 +1,551 @@
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <top (required)> at /workspaces/consultation/config/environment.rb:5)
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+Initializing websocket
+Started GET "/" for 127.0.0.1 at 2025-04-10 20:09:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 5729)
+  Rendered layouts/_favicons.html.erb (Duration: 0.3ms | Allocations: 669)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 32214)
+Completed 200 OK in 1276ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 1719998)
+
+
+Started GET "/assets/application-bf178ac1dcb08208158afb3d62354553ddbca6d3.css" for 127.0.0.1 at 2025-04-10 20:09:35 +0000
+Started GET "/assets/application-82829fc8d6c40ded29a3ba619c65930023cdc92d.js" for 127.0.0.1 at 2025-04-10 20:09:35 +0000
+Removed sourceMappingURL comment for missing asset '/assets/application.js.map' from /assets/application.js.map
+Started GET "/assets/fonts/MADECanvasRegularPERSONALUSE-e15c080b74234d13355ac8faba26e71a3c9daea6.otf" for 127.0.0.1 at 2025-04-10 20:09:35 +0000
+Started GET "/" for 127.0.0.1 at 2025-04-10 20:10:20 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_favicons.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 35270)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 36149)
+
+
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateCustomers (20250410202408)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "phone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250410202408') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateConsultants (20250410202529)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "consultants" ("id" bigserial primary key, "name" character varying, "email" character varying, "cpf" character varying, "phone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250410202529') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateSchedules (20250410202646)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "schedules" ("id" bigserial primary key, "title" character varying, "description" character varying, "start_date" timestamp(6), "end_date" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250410202646') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddConsultantToCostumers (20250410202917)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "costumers" ADD "consultant_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6994864439086452495)[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddConsultantToCustomers (20250410203050)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mALTER TABLE "customers" ADD "consultant_id" bigint NOT NULL[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE INDEX "index_customers_on_consultant_id" ON "customers" ("consultant_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "customers" ADD CONSTRAINT "fk_rails_f81760a416"
+FOREIGN KEY ("consultant_id")
+  REFERENCES "consultants" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250410203050') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddConsultantToSchedules (20250410203454)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "schedules" ADD "consultant_id" bigint NOT NULL[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE INDEX "index_schedules_on_consultant_id" ON "schedules" ("consultant_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "schedules" ADD CONSTRAINT "fk_rails_eddcab34ec"
+FOREIGN KEY ("consultant_id")
+  REFERENCES "consultants" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250410203454') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6994864439086452495)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+Initializing websocket
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultant" for 127.0.0.1 at 2025-04-10 20:48:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/consultant"):
+  
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:49:28 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/consultants"):
+  
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:50:13 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  Rendered consultants/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 370)
+  Rendered layouts/_favicons.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 3085)
+Completed 200 OK in 21ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 25922)
+
+
+DEPRECATION WARNING: `Rails.application.secrets` is deprecated in favor of `Rails.application.credentials` and will be removed in Rails 7.2. (called from <main> at /workspaces/consultation/config/environment.rb:5)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsultant Create (1.0ms)[0m  [1m[32mINSERT INTO "consultants" ("name", "email", "cpf", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Renato"], ["email", "renatolhernandez@hotmail.com"], ["cpf", "125.536.952.01"], ["phone", "11 96298-5731"], ["created_at", "2025-04-10 20:53:54.671916"], ["updated_at", "2025-04-10 20:53:54.671916"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:54:23 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  Rendered consultants/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 360)
+  Rendered layouts/_favicons.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3066)
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 6295)
+
+
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:54:46 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  Rendered consultants/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 371)
+  Rendered layouts/_favicons.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3103)
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 6306)
+
+
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:54:50 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  Rendered consultants/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 369)
+  Rendered layouts/_favicons.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3118)
+Completed 200 OK in 12ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 6336)
+
+
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:54:53 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  Rendered consultants/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 376)
+  Rendered layouts/_favicons.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3097)
+Completed 200 OK in 13ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 6298)
+
+
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:54:56 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  Rendered consultants/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 1518)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1884)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 5128)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= @consultants.each do  %>
+):
+1:    <%= @consultants.each do  %>
+  
+app/views/consultants/index.html.erb:3: syntax error, unexpected end-of-input, expecting `end' or dummy end
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:56:44 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  [1m[36mConsultant Load (0.3ms)[0m  [1m[34mSELECT "consultants".* FROM "consultants"[0m
+  ↳ app/views/consultants/index.html.erb:14
+  Rendered consultants/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 15178)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 15537)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.5ms | Allocations: 18752)
+
+
+  
+ActionView::Template::Error (undefined method `cpg' for an instance of Consultant):
+    16:           <td><%= consultant.name %></td>
+    17:           <td><%= consultant.email %></td>
+    18:           <td><%= consultant.phone %></td>
+    19:           <td><%= consultant.cpg %></td>
+    20:         </tr>
+    21:       <% end %>
+    22:   
+  
+app/views/consultants/index.html.erb:19
+app/views/consultants/index.html.erb:14
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:56:51 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  [1m[36mConsultant Load (0.3ms)[0m  [1m[34mSELECT "consultants".* FROM "consultants"[0m
+  ↳ app/views/consultants/index.html.erb:14
+  Rendered consultants/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 4774)
+  Rendered layouts/_favicons.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 16292)
+Completed 200 OK in 22ms (Views: 10.8ms | ActiveRecord: 1.7ms | Allocations: 19510)
+
+
+Started GET "/assets/application-7bdcc4bbf1b617df97dfc8d8ed8cc2359e8e6758.css" for 127.0.0.1 at 2025-04-10 20:56:51 +0000
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:56:57 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  [1m[36mConsultant Load (0.3ms)[0m  [1m[34mSELECT "consultants".* FROM "consultants"[0m
+  ↳ app/views/consultants/index.html.erb:14
+  Rendered consultants/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 4515)
+  Rendered layouts/_favicons.html.erb (Duration: 0.3ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 7239)
+Completed 200 OK in 22ms (Views: 9.3ms | ActiveRecord: 2.1ms | Allocations: 10450)
+
+
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:57:09 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  [1m[36mConsultant Load (0.3ms)[0m  [1m[34mSELECT "consultants".* FROM "consultants"[0m
+  ↳ app/views/consultants/index.html.erb:14
+  Rendered consultants/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 4014)
+  Rendered layouts/_favicons.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 6732)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 1.6ms | Allocations: 9945)
+
+
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:57:13 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  [1m[36mConsultant Load (0.2ms)[0m  [1m[34mSELECT "consultants".* FROM "consultants"[0m
+  ↳ app/views/consultants/index.html.erb:14
+  Rendered consultants/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4498)
+  Rendered layouts/_favicons.html.erb (Duration: 0.4ms | Allocations: 132)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 7241)
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 1.5ms | Allocations: 10444)
+
+
+reload
+reload
+[ActionCable] Broadcasting to reload: {}
+reload
+[ActionCable] Broadcasting to reload: {}
+[ActionCable] Broadcasting to reload: {}
+Started GET "/consultants" for 127.0.0.1 at 2025-04-10 20:57:16 +0000
+Processing by ConsultantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consultants/index.html.erb within layouts/application
+  [1m[36mConsultant Load (0.4ms)[0m  [1m[34mSELECT "consultants".* FROM "consultants"[0m
+  ↳ app/views/consultants/index.html.erb:14
+  Rendered consultants/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 4235)
+  Rendered layouts/_favicons.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 6963)
+Completed 200 OK in 22ms (Views: 10.5ms | ActiveRecord: 2.5ms | Allocations: 10165)
+
+
