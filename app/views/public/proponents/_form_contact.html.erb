@@ -3,17 +3,27 @@
 
   <h3 class="text-center my-4 fs-4 fw-bold">Contato</h3>
 
-  <section class="row">
+  <div class="row" data-controller="contact-type" data-contact-type-initial-value="<%= contact.contact_type %>">
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-      <%= render TextFieldComponent.new(form: f, field_name: :contact_type, label: "Tipo", error_message: contact.errors.messages[:contact_type]) %>
+      <%= render SelectFieldComponent.new(form: f, field_name: :contact_type, label: "Tipo",
+          options: contact_types, selected: contact.contact_type,
+          data: { action: "change->contact-type#toggleEmailField" },
+          error_message: contact.errors[:contact_type])
+      %>
     </div>
 
     <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-      <%= render TextFieldComponent.new(form: f, field_name: :value, label: "Número", data: { mask_target: "mobileMask" }, error_message: contact.errors.messages[:value]) %>
-    </div>
+      <div data-number-field class="<%= contact.email? ? 'd-none' : 'd-block' %>">
+        <%= render TextFieldComponent.new(form: f, field_name: :value, label: "Número", data: { mask_target: "mobileMask" }, error_message: contact.errors[:value]) %>
+      </div>
 
-    <div class="d-flex justify-content-start">
-      <%= link_to "Remover contato", "#", data: { action: "nested-form#removeAssociation" }, class: "btn btn-danger mt-2" %>
+      <div data-email-field class="<%= contact.email? ? 'd-block' : 'd-none' %>">
+        <%= render TextFieldComponent.new(form: f, field_name: :value, label: "E-mail", error_message: contact.errors[:value]) %>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <div class="d-flex justify-content-start">
+    <%= link_to "Remover contato", "#", data: { action: "nested-form#removeAssociation" }, class: "btn btn-danger mt-2" %>
+  </div>
 </div>

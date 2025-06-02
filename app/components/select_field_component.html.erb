@@ -1,0 +1,12 @@
+<div class="my-2">
+  <label class="form-label"><%= @label %></label>
+
+  <%= @form.hidden_field @field_name, value: @selected if @disabled.present? %>
+  <%= @form.select @field_name, options_for_select(@options, @selected), {}, { class: "form-select#{' disabled bg-light' if @disabled.present?}", disabled: @disabled } %>
+
+  <% if @error_message.present? %>
+    <div class="form-text text-danger">
+      <%= @error_message.join(", ") %>
+    </div>
+  <% end %>
+</div>

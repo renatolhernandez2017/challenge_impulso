@@ -33,7 +33,7 @@
     <div data-controller="nested-form">
       <div data-nested-form-target="container">
         <%= f.fields_for :contacts do |contact| %>
-          <%= render "form_contact", f: contact, contact: contact.object %>
+          <%= render "form_contact", f: contact, contact: contact.object, contact_types: contact_types %>
         <% end %>
       </div>
 
@@ -43,7 +43,7 @@
   
       <template data-nested-form-target="template">
         <%= f.fields_for(:contacts, Contact.new, child_index: "NEW_RECORD") do |contact_form| %>
-          <%= render "form_contact", f: contact_form, contact: contact_form.object %>
+          <%= render "form_contact", f: contact_form, contact: contact_form.object, contact_types: contact_types %>
         <% end %>
       </template>
     </div>

@@ -1,5 +1,6 @@
 class Public::ProponentsController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :set_contact_types
 
   def index
     @proponent = Proponent.new
@@ -29,5 +30,9 @@ class Public::ProponentsController < ApplicationController
       addresses_attributes: %i[street number neighborhood city state zip_code _destroy],
       contacts_attributes: %i[contact_type value _destroy]
     )
+  end
+
+  def set_contact_types
+    @contact_types = Contact.contact_types.keys.map { |type| [t("attributes.contact.contact_type.#{type}"), type] }
   end
 end

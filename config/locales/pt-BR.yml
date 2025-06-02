@@ -6,3 +6,10 @@ pt-BR:
       address: Endereço
       contact: Contato
       proponent: Proponente
+  attributes:
+    contact:
+      contact_type:
+        residential_phone: "Telefone residencial"
+        mobile: "Celular"
+        whatsapp: "WhatsApp"
+        email: "E-mail"

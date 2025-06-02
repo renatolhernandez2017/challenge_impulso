@@ -8636,6 +8636,27 @@ var autosubmitselect_controller_default = class extends Controller {
   }
 };
 
+// app/javascript/controllers/contact_type_controller.js
+var contact_type_controller_default = class extends Controller {
+  // static targets = ["emailField", "numberField"]
+  // connect() {
+  //   console.log("aquiii;;;;")
+  //   this.toggleFields()
+  // }
+  // toggleFields() {
+  //   if (this.selectTarget.value === "email") {
+  //     this.emailFieldTarget.classList.remove("d-none")
+  //     this.numberFieldTarget.classList.add("d-none")
+  //   } else {
+  //     this.emailFieldTarget.classList.add("d-none")
+  //     this.numberFieldTarget.classList.remove("d-none")
+  //   }
+  // }
+  // change() {
+  //   this.toggleFields()
+  // }
+};
+
 // app/javascript/controllers/hello_controller.js
 var hello_controller_default = class extends Controller {
   connect() {
@@ -12221,6 +12242,7 @@ var upload_controller_default = class extends Controller {
 // app/javascript/controllers/index.js
 application.register("auto-expand-textarea", auto_expand_textarea_controller_default);
 application.register("autosubmitselect", autosubmitselect_controller_default);
+application.register("contact-type", contact_type_controller_default);
 application.register("hello", hello_controller_default);
 application.register("inss", inss_controller_default);
 application.register("mask", mask_controller_default);
@@ -12231,6 +12253,26 @@ application.register("upload", upload_controller_default);
 Turbo.StreamActions.redirect = function() {
   Turbo.visit(this.target);
 };
+document.addEventListener("turbo:load", () => {
+  document.querySelectorAll("select[name*='[contact_type]']").forEach((select) => {
+    const wrapper = select.closest("[data-controller='contact-type']");
+    const emailField = wrapper.querySelector("[data-email-field]");
+    const numberField = wrapper.querySelector("[data-number-field]");
+    if (!emailField || !numberField)
+      return;
+    function toggleFields() {
+      if (select.value === "email") {
+        emailField.classList.remove("d-none");
+        numberField.classList.add("d-none");
+      } else {
+        emailField.classList.add("d-none");
+        numberField.classList.remove("d-none");
+      }
+    }
+    toggleFields();
+    select.addEventListener("change", toggleFields);
+  });
+});
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:
