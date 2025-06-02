@@ -1,15 +1,27 @@
-@import "pagy.tailwind";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: 'MADECanvas-Black';
-  src: url('fonts/MADECanvasBlackPERSONALUSE.otf') format('opentype');
-  src: url('fonts/MADECanvasLightPERSONALUSE.otf') format('opentype');
-  src: url('fonts/MADECanvasRegularPERSONALUSE.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+.main {
+  min-height: 100vh;
+  display: flex;
 }
 
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #343a40;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+}
+
+.sidebar a:hover {
+  background-color: #495057;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+}

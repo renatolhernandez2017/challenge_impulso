@@ -1,7 +1,7 @@
 class InssController < ApplicationController
   def discount
     salary = params[:salary].to_f
-    discount = InssCalculator.calculate(salary)
+    discount = InssDiscountCalculator.call(salary)
     render json: { discount: discount }
   end
 end
