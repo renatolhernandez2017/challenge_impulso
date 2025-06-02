@@ -1,34 +1,52 @@
 <%= turbo_frame_tag 'form_proponent' do %>
-  <%= form_with model: proponent, url: proponent.persisted? ? public_proponents_path : public_proponents_path(proponent), data: {controller: "inss mask"} do |f| %>
+  <%= form_with model: proponent, url: public_proponents_path, data: {controller: "inss mask"} do |f| %>
     <section class="row">
       <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
         <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Nome", error_message: proponent.errors.messages[:name]) %>
       </div>
 
       <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
-        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Documento", error_message: proponent.errors.messages[:document]) %>
+        <%= render TextFieldComponent.new(form: f, field_name: :document, label: "Documento", error_message: proponent.errors.messages[:document]) %>
       </div>
 
       <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
-        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Data de Nascimento", type: "date", error_message: proponent.errors.messages[:birth_date]) %>
+        <%= render TextFieldComponent.new(form: f, field_name: :birth_date, label: "Data de Nascimento", type: "date", error_message: proponent.errors.messages[:birth_date]) %>
       </div>
 
       <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
-        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Salário", data: { mask_target: "moneyMask" }, error_message: proponent.errors.messages[:salary]) %>
+        <%= render TextFieldComponent.new(form: f, field_name: :salary, label: "Salário", data: { mask_target: "moneyMask", inss_target: "input", action: "input->inss#updateDiscount" }, error_message: proponent.errors.messages[:salary]) %>
       </div>
 
       <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
-        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Desconto do INSS", data: { mask_target: "moneyMask" }, disabled: true, error_message: proponent.errors.messages[:inss_discount]) %>
+        <%= render TextFieldComponent.new(form: f, field_name: :inss_discount, label: "Desconto do INSS", data: { mask_target: "moneyMask", inss_target: "result" }, disabled: true, error_message: proponent.errors.messages[:inss_discount]) %>
       </div>
     </section>
 
+    <hr>
+
     <%= f.fields_for :addresses do |address| %>
-      <% render "form_address", address: address %>
+      <%= render "form_address", f: address, address: address.object %>
     <% end %>
 
-    <%= f.fields_for :contacts do |contact| %>
-      <% render "form_contact", contact: contact %>
-    <% end %>
+    <hr>
+
+    <div data-controller="nested-form">
+      <div data-nested-form-target="container">
+        <%= f.fields_for :contacts do |contact| %>
+          <%= render "form_contact", f: contact, contact: contact.object %>
+        <% end %>
+      </div>
+
+      <div class="d-flex justify-content-end" style="margin-top: -5%;">
+        <%= link_to "Adicionar contato", "#", data: { action: "nested-form#addAssociation" }, class: "btn btn-primary mt-3" %>
+      </div>
+  
+      <template data-nested-form-target="template">
+        <%= f.fields_for(:contacts, Contact.new, child_index: "NEW_RECORD") do |contact_form| %>
+          <%= render "form_contact", f: contact_form, contact: contact_form.object %>
+        <% end %>
+      </template>
+    </div>
 
     <%= render ButtonComponent.new(form: f, label: btn_save) %>
   <% end %>

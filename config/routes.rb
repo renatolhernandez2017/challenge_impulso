@@ -9,9 +9,7 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  resources :inss, only: %i[index create update delete] do
-    get :discount, on: :member
-  end
+  resources :inss
 
   namespace :public do
     resources :proponents, only: %i[index create]
@@ -22,5 +20,8 @@ Rails.application.routes.draw do
   ###############
 
   namespace :api do
+    resources :inss, only: %i[index] do
+      get :discount, on: :collection
+    end
   end
 end

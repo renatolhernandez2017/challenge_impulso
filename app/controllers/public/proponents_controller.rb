@@ -11,9 +11,13 @@ class Public::ProponentsController < ApplicationController
     @proponent = Proponent.new(proponent_params)
 
     if @proponent.save
-      redirect_to new_public_proponent_path, notice: "Cadastro realizado com sucesso!"
+      flash[:success] = "Cadastro realizado com sucesso!"
+      render turbo_stream: turbo_stream.action(:redirect, public_proponents_path)
     else
-      render :new, status: :unprocessable_entity
+      render turbo_stream: turbo_stream.replace("form_proponent",
+        partial: "public/proponents/form",
+          locals: { proponent: @proponent, btn_save: "Salvar" }
+        )
     end
   end
 

@@ -1,29 +1,31 @@
-<div id="address-fields">
+<div data-nested-form-target="wrapper">
+  <%= f.hidden_field :_destroy %>
+
   <h3 class="text-center my-4 fs-4 fw-bold">Endereço</h3>
 
   <section class="row">
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-      <%= render TextFieldComponent.new(form: address, field_name: :zip_code, data: { mask_target: "cepMask" }, label: "Cep") %>
+      <%= render TextFieldComponent.new(form: f, field_name: :zip_code, data: { mask_target: "cepMask" }, label: "Cep", error_message: address.errors.messages[:zip_code]) %>
     </div>
 
     <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
-      <%= render TextFieldComponent.new(form: address, field_name: :street, label: "Endereço") %>
+      <%= render TextFieldComponent.new(form: f, field_name: :street, label: "Endereço", error_message: address.errors.messages[:zip_code]) %>
     </div>
 
     <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-      <%= render TextFieldComponent.new(form: address, field_name: :number, label: "Número", type: "number") %>
+      <%= render TextFieldComponent.new(form: f, field_name: :number, label: "Número", type: "number", error_message: address.errors.messages[:number]) %>
     </div>
 
     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-      <%= render TextFieldComponent.new(form: address, field_name: :neighborhood, label: "Bairro") %>
+      <%= render TextFieldComponent.new(form: f, field_name: :neighborhood, label: "Bairro", error_message: address.errors.messages[:neighborhood]) %>
     </div>
 
     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-      <%= render TextFieldComponent.new(form: address, field_name: :city, label: "Cidade") %>
+      <%= render TextFieldComponent.new(form: f, field_name: :city, label: "Cidade", error_message: address.errors.messages[:city]) %>
     </div>
 
     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-      <%= render TextFieldComponent.new(form: address, field_name: :state, label: "Estado", data: { mask_target: "ufMask" }) %>
+      <%= render TextFieldComponent.new(form: f, field_name: :state, label: "Estado", data: { mask_target: "ufMask" }, error_message: address.errors.messages[:state]) %>
     </div>
   </section>
 </div>

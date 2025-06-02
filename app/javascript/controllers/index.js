@@ -19,5 +19,8 @@ application.register("inss", InssController)
 import MaskController from "./mask_controller"
 application.register("mask", MaskController)
 
+import NestedFormController from "./nested_form_controller"
+application.register("nested-form", NestedFormController)
+
 import UploadController from "./upload_controller"
 application.register("upload", UploadController)

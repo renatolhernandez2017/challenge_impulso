@@ -8645,24 +8645,28 @@ var hello_controller_default = class extends Controller {
 
 // app/javascript/controllers/inss_controller.js
 var inss_controller_default = class extends Controller {
-  static targets = ["salary", "discount"];
-  connect() {
-    if (this.hasSalaryTarget) {
-      this.salaryTarget.addEventListener("change", this.handleChange);
+  static targets = ["input", "result"];
+  async updateDiscount() {
+    const salary = this.inputTarget.value;
+    if (!salary) {
+      this.resultTarget.textContent = "";
+      this.resultTarget.value = "";
+      return;
+    }
+    try {
+      const response = await fetch(`/api/inss/discount?salary=${salary}`, {
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+      const data = await response.json();
+      this.resultTarget.value = data.discount;
+      this.resultTarget.textContent = `Desconto: R$ ${data.discount}`;
+    } catch (error2) {
+      console.error("Erro ao calcular desconto INSS", error2);
+      this.resultTarget.textContent = "Erro ao calcular desconto";
     }
   }
-  disconnect() {
-    if (this.hasSalaryTarget) {
-      this.salaryTarget.removeEventListener("change", this.handleChange);
-    }
-  }
-  handleChange = () => {
-    fetch(`/inss/discount?salary=${this.salaryTarget.value}`).then((response) => response.json()).then((data) => {
-      if (this.hasDiscountTarget) {
-        this.discountTarget.value = data.discount;
-      }
-    });
-  };
 };
 
 // node_modules/imask/esm/core/utils.js
@@ -12165,6 +12169,27 @@ var mask_controller_default = class extends Controller {
   }
 };
 
+// app/javascript/controllers/nested_form_controller.js
+var nested_form_controller_default = class extends Controller {
+  static targets = ["template", "container", "wrapper"];
+  static values = { modelName: String };
+  addAssociation(event) {
+    event.preventDefault();
+    const content = this.templateTarget.innerHTML.replace(/NEW_RECORD/g, (/* @__PURE__ */ new Date()).getTime());
+    this.containerTarget.insertAdjacentHTML("beforeend", content);
+  }
+  removeAssociation(event) {
+    event.preventDefault();
+    const wrapper = event.target.closest("[data-nested-form-target='wrapper']");
+    if (wrapper.querySelector("input[name*='_destroy']")) {
+      wrapper.querySelector("input[name*='_destroy']").value = 1;
+      wrapper.style.display = "none";
+    } else {
+      wrapper.remove();
+    }
+  }
+};
+
 // app/javascript/controllers/upload_controller.js
 var upload_controller_default = class extends Controller {
   static targets = ["file"];
@@ -12199,6 +12224,7 @@ application.register("autosubmitselect", autosubmitselect_controller_default);
 application.register("hello", hello_controller_default);
 application.register("inss", inss_controller_default);
 application.register("mask", mask_controller_default);
+application.register("nested-form", nested_form_controller_default);
 application.register("upload", upload_controller_default);
 
 // app/javascript/application.js
