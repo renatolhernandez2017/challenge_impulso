@@ -6424,13 +6424,13 @@ var AttributeObserver = class {
   }
 };
 function add(map, key, value) {
-  fetch(map, key).add(value);
+  fetch2(map, key).add(value);
 }
 function del(map, key, value) {
-  fetch(map, key).delete(value);
+  fetch2(map, key).delete(value);
   prune(map, key);
 }
-function fetch(map, key) {
+function fetch2(map, key) {
   let values = map.get(key);
   if (!values) {
     values = /* @__PURE__ */ new Set();
@@ -8334,6 +8334,28 @@ var hello_controller_default = class extends Controller {
   connect() {
     this.element.textContent = "Hello World!";
   }
+};
+
+// app/javascript/controllers/inss_controller.js
+var inss_controller_default = class extends Controller {
+  static targets = ["salary", "discount"];
+  connect() {
+    if (this.hasSalaryTarget) {
+      this.salaryTarget.addEventListener("change", this.handleChange);
+    }
+  }
+  disconnect() {
+    if (this.hasSalaryTarget) {
+      this.salaryTarget.removeEventListener("change", this.handleChange);
+    }
+  }
+  handleChange = () => {
+    fetch(`/inss/discount?salary=${this.salaryTarget.value}`).then((response) => response.json()).then((data) => {
+      if (this.hasDiscountTarget) {
+        this.discountTarget.value = data.discount;
+      }
+    });
+  };
 };
 
 // node_modules/imask/esm/core/utils.js
@@ -11868,6 +11890,7 @@ var upload_controller_default = class extends Controller {
 application.register("auto-expand-textarea", auto_expand_textarea_controller_default);
 application.register("autosubmitselect", autosubmitselect_controller_default);
 application.register("hello", hello_controller_default);
+application.register("inss", inss_controller_default);
 application.register("mask", mask_controller_default);
 application.register("upload", upload_controller_default);
 

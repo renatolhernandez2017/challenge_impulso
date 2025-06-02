@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
+  resources :inss, only: %i[index create update delete] do
+    get :discount, on: :member
+  end
+
   namespace :admin do
   end
 

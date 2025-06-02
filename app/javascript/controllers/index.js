@@ -13,6 +13,9 @@ application.register("autosubmitselect", AutosubmitselectController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import InssController from "./inss_controller"
+application.register("inss", InssController)
+
 import MaskController from "./mask_controller"
 application.register("mask", MaskController)
 

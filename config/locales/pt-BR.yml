@@ -2,3 +2,7 @@ pt-BR:
   faker:
   activerecord:
     models:
+      user: Usuário
+      address: Endereço
+      contact: Contato
+      proponent: Proponente
