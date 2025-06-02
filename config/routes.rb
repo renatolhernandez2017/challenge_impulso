@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     get :discount, on: :member
   end
 
-  namespace :admin do
+  namespace :public do
+    resources :proponents, only: %i[index create]
   end
 
   ###############

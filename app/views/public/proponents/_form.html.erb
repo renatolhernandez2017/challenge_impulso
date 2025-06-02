@@ -1,0 +1,25 @@
+<%= turbo_frame_tag 'form_proponent' do %>
+  <%= form_with model: proponent, url: proponent.persisted? ? public_proponents_path : public_proponents_path(proponent), data: {controller: "inss"} do |f| %>
+    <p><%= f.label :name %><br><%= f.text_field :name %></p>
+    <p><%= f.label :document %><br><%= f.text_field :document %></p>
+    <p><%= f.label :birth_date %><br><%= f.date_field :birth_date %></p>
+    <p><%= f.label :salary %><br><%= f.number_field :salary, step: 0.01, id: "salary-input" %></p>
+    <p><%= f.label :inss_discount %><br><%= f.number_field :inss_discount, readonly: true, id: "inss-discount" %></p>
+
+    <h3>Endereço</h3>
+    <%= f.fields_for :addresses do |address| %>
+      <p><%= address.label :street %><br><%= address.text_field :street %></p>
+    <% end %>
+
+    <h3>Contatos</h3>
+    <%= f.fields_for :contacts do |contact| %>
+      <p>
+        <%= contact.label :contact_type %>
+        <%#= contact.select :contact_type, Contact.contact_types.keys.map { |k| [k.humanize, k] } %>
+        <%= contact.text_field :value %>
+      </p>
+    <% end %>
+
+    <%= f.submit "Cadastrar" %>
+  <% end %>
+<% end %>
