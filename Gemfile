@@ -5,7 +5,6 @@ source "https://rubygems.org"
 ruby "3.3.1"
 
 gem "audited", "~> 5.0"
-gem "aws-sdk-s3", require: false
 gem "bootsnap", require: false
 gem "cssbundling-rails"
 gem "devise_invitable"
@@ -34,19 +33,22 @@ gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "view_component"
-gem "mercadopago-sdk", "~> 2.0"
-gem "mercadopago"
 gem "uglifier", ">= 4.1.20"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "faker"
+  gem "action-cable-testing"
+  gem "factory_bot_rails"
+  gem "shoulda-matchers", "~> 5.0"
+  gem "rspec-rails", "~> 7.1"
 end
 
 group :development do
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
   gem "htmlbeautifier"
   gem "letter_opener"
+  gem "letter_opener_web"
   gem "lookbook", ">= 2.3.0"
   gem "rails_live_reload"
   gem "ruby-lsp-rails", require: false

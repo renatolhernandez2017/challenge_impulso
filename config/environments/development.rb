@@ -36,17 +36,17 @@ Rails.application.configure do
     config.action_controller.perform_caching = false
 
     # config/environments/development.rb
-    config.cache_store = :redis_cache_store, { url: "redis://localhost:6379/1" }
+    config.cache_store = :redis_cache_store, {url: "redis://localhost:6379/1"}
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  config.action_mailer.default_url_options = {host: "localhost", port: 3003}
+  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
   config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.asset_host = "http://localhost:3003"
+  config.action_mailer.asset_host = "http://localhost:3000"
 
   config.action_mailer.perform_caching = false
 

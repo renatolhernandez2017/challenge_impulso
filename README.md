@@ -3,7 +3,7 @@
 ## Convite de Acesso ao Mailtrap
 
 1. Acesse a página de convite de acesso:  
-   - [http://localhost:3000/admin/users](http://localhost:3003/admin/users)
+   - [http://localhost:3000/admin/users](http://localhost:3000/admin/users)
 2. Preencha o formulário e envie o convite.
 3. Acesse o Mailtrap:  
    - [https://mailtrap.io/](https://mailtrap.io/)
@@ -143,7 +143,7 @@ https://sql.toad.cz/
 npm install -g localtunnel
 
 ## subir na porta
-lt --port 3003
+lt --port 3000
 
 > toda vez gerar uma nova url
 > ele entrega uma url dai clica nela
@@ -157,5 +157,5 @@ https://theboroer.github.io/localtunnel-www/
 
 
 ### ir para
-http://localhost:3003/sidekiq# consult
+http://localhost:3000/sidekiq# consult
 # consult
