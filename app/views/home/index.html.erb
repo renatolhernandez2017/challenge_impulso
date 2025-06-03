@@ -3,21 +3,21 @@
     <div class="card border-0 shadow-lg flex-fill">
       <div class="card-body">
         <h5 class="card-title">Proponentes</h5>
-        <p class="card-text fs-4">120</p>
+        <p class="card-text fs-4"><%= @proponents_count %></p>
       </div>
     </div>
 
     <div class="card border-0 shadow-lg flex-fill">
       <div class="card-body">
         <h5 class="card-title">Salários Registrados</h5>
-        <p class="card-text fs-4">R$ 256.000</p>
+        <p class="card-text fs-4"><%= number_to_currency(@salaries_total) %></p>
       </div>
     </div>
 
     <div class="card border-0 shadow-lg flex-fill">
       <div class="card-body">
         <h5 class="card-title">Descontos INSS</h5>
-        <p class="card-text fs-4">R$ 45.820</p>
+        <p class="card-text fs-4"><%= number_to_currency(@discounts_total) %></p>
       </div>
     </div>
   </div>

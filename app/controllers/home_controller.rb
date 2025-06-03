@@ -4,6 +4,9 @@ class HomeController < ApplicationController
   def index
     @tracks = SalaryTracks::TRACKS
     proponents = Proponent.all
+    @proponents_count = proponents.count
+    @salaries_total = proponents.sum(&:salary)
+    @discounts_total = proponents.sum(&:inss_discount)
 
     grouped = proponents.group_by { |p| salary_range(p.salary) }
 
