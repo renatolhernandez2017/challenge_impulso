@@ -9,8 +9,8 @@
 # You can set any pagy variable as a Pagy::DEFAULT. They can also be overridden per instance by just passing them to
 # Pagy.new|Pagy::Countless.new|Pagy::Calendar::*.new or any of the #pagy* controller methods
 # Here are the few that make more sense as DEFAULTs:
-Pagy::DEFAULT[:limit] = 10                            # default
-Pagy::DEFAULT[:items] = 10                            # default
+Pagy::DEFAULT[:limit] = 5                            # default
+Pagy::DEFAULT[:items] = 5                            # default
 Pagy::DEFAULT[:pagy_path] = Rails.root.join("app", "assets", "stylesheets", "pagy.tailwind.css")
 # Pagy::DEFAULT[:size]        = [1,4,4,1]             # default in pagy < 7.0
 # Pagy::DEFAULT[:page_param]  = :page                 # default

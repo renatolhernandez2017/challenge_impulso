@@ -12223,6 +12223,23 @@ var nested_form_controller_default = class extends Controller {
   }
 };
 
+// app/javascript/controllers/toggle_controller.js
+var toggle_controller_default = class extends Controller {
+  connect() {
+  }
+  toggleRow(event) {
+    const trId = event.currentTarget.dataset.trId;
+    const hiddenRow = document.getElementById(trId);
+    if (hiddenRow) {
+      if (hiddenRow.classList.contains("d-none")) {
+        hiddenRow.classList.remove("d-none");
+      } else {
+        hiddenRow.classList.add("d-none");
+      }
+    }
+  }
+};
+
 // app/javascript/controllers/upload_controller.js
 var upload_controller_default = class extends Controller {
   static targets = ["file"];
@@ -12259,35 +12276,13 @@ application.register("home", home_controller_default);
 application.register("inss", inss_controller_default);
 application.register("mask", mask_controller_default);
 application.register("nested-form", nested_form_controller_default);
+application.register("toggle", toggle_controller_default);
 application.register("upload", upload_controller_default);
 
 // app/javascript/application.js
 Turbo.StreamActions.redirect = function() {
   Turbo.visit(this.target);
 };
-document.addEventListener("turbo:load", initContactTypeFields);
-document.addEventListener("turbo:frame-load", initContactTypeFields);
-function initContactTypeFields() {
-  document.querySelectorAll("[data-controller='contact-type']").forEach((wrapper) => {
-    const select = wrapper.querySelector("select[name*='[contact_type]']");
-    const emailField = wrapper.querySelector("[data-email-field]");
-    const numberField = wrapper.querySelector("[data-number-field]");
-    if (!select || !emailField || !numberField)
-      return;
-    function toggleFields() {
-      const value = select.value || wrapper.dataset.contactTypeInitialValue;
-      if (value === "email") {
-        emailField.classList.remove("d-none");
-        numberField.classList.add("d-none");
-      } else {
-        emailField.classList.add("d-none");
-        numberField.classList.remove("d-none");
-      }
-    }
-    toggleFields();
-    select.addEventListener("change", toggleFields);
-  });
-}
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:

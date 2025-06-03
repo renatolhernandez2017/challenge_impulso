@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :inss
+  resources :proponents
 
   namespace :public do
     resources :proponents, only: %i[index create]
