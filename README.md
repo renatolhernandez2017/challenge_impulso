@@ -30,6 +30,6 @@
 
   - Pronto! O sistema está no ar e funcionando corretamente.
 
-  ### Para simular a criação de novos proponentes, e para conferir a requisição assincrona, segue o link abaixo:
+  ### Para simular a criação de novos proponentes e verificar a requisição assíncrona, segue o link abaixo:
 
   link:[http://localhost:3000/public/proponents](http://localhost:3000/public/proponents)
