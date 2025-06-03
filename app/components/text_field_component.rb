@@ -8,15 +8,7 @@ class TextFieldComponent < ViewComponent::Base
     @data = data
     @readonly = readonly
 
-    # format_date_field if @type.present? && @type == "date"
-
     @error_message = error_message
     @label = label
   end
-
-  # def format_date_field
-  #   return unless @form.object.send(@field_name).present?
-
-  #   @form.object.send(:"#{@field_name}=", @form.object.send(@field_name).strftime("%Y-%m-%d"))
-  # end
 end

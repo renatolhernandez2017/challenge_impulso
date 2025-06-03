@@ -4,6 +4,6 @@ module ApplicationHelper
   def show_sidebar?
     params[:controller].include?("sessions") ||
     params[:controller].include?("public") ||
-     params[:controller].include?("devise_invitable/registrations")
+    params[:controller].include?("devise_invitable/registrations")
   end
 end
