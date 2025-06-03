@@ -5,13 +5,20 @@ class HomeController < ApplicationController
     @tracks = SalaryTracks::TRACKS
     proponents = Proponent.all
 
-    grouped_by_range = proponents.group_by { |p| salary_range(p.salary) }
+    grouped = proponents.group_by { |p| salary_range(p.salary) }
 
-    @proponents = grouped_by_range.map do |track, proponents|
+    track_order = @tracks.map { |t| t[:name] }
+
+    @proponents = track_order.map do |track|
       {
         track: track,
-        quantity: proponents.count
+        quantity: grouped[track]&.count.to_i
       }
+    end
+
+    above_max = grouped.keys - track_order
+    above_max.each do |track|
+      @proponents << { track: track, quantity: grouped[track].count }
     end
   end
 

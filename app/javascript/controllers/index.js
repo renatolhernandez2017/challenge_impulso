@@ -10,6 +10,9 @@ application.register("auto-expand-textarea", AutoExpandTextareaController)
 import AutosubmitselectController from "./autosubmitselect_controller"
 application.register("autosubmitselect", AutosubmitselectController)
 
+import ChartController from "./chart_controller"
+application.register("chart", ChartController)
+
 import ContactTypeController from "./contact_type_controller"
 application.register("contact-type", ContactTypeController)
 

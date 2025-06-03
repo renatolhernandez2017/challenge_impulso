@@ -42,4 +42,22 @@
       </div>
     <% end %>
   </div>
+
+  <div class="col-1"></div>
+
+  <div class="col-6">
+    <canvas style="max-height: 150px;" data-controller="chart" data-chart-labels-value="<%= @proponents.map { |p| p[:track] } %>"
+      data-chart-data-value="<%= @proponents.map { |p| p[:quantity] } %>"
+      data-chart-title-value="Funcionários por faixa salarial">
+    </canvas>
+  </div>
+
+  <div class="col-4">
+    <canvas style="max-height: 150px;" data-controller="chart" data-chart-type-value="pie" data-chart-labels-value="<%= @proponents.map { |p| p[:track] } %>"
+      data-chart-data-value="<%= @proponents.map { |p| p[:quantity] } %>"
+      data-chart-title-value="Funcionários por faixa salarial">
+    </canvas>
+  </div>
+
+  <div class="col-1"></div>
 </div>
