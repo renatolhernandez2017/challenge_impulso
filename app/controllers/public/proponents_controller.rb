@@ -25,11 +25,14 @@ class Public::ProponentsController < ApplicationController
   private
 
   def proponent_params
-    params.require(:proponent).permit(
+    params_result = params.require(:proponent).permit(
       :name, :document, :birth_date, :salary, :inss_discount,
       addresses_attributes: %i[street number neighborhood city state zip_code _destroy],
       contacts_attributes: %i[contact_type value _destroy]
     )
+
+    params_result[:salary] = params_result[:salary].to_s.gsub(/\./, '').gsub(/,/, '.').to_f
+    params_result
   end
 
   def set_contact_types
