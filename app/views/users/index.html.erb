@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-10">
+    <h2 class="text-center my-3">Listagem de Usuários</h2>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+
+          <td>
+            <button type="button" class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#edit_user<%= user.id %>" title="Editar">
+              <span class="material-symbols-outlined text-primary">edit</span>
+            </button>
+
+            <div class="modal" id="edit_user<%= user.id %>" tabindex="-1" aria-hidden="true">
+              <%= render ModalComponent.new(form: render("form", user: user, btn_save: "Atualizar"), title: "Editar Usuário : #{user.id}") %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= render PaginationComponent.new(pagy: @pagy) %>
+</div>

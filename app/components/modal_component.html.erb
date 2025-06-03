@@ -1,0 +1,14 @@
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title"><%= @title %></h4>
+      <form method="dialog" title="<%= @btn_back %>">
+        <button type="button" class="btn-close position-absolute end-0 top-0 m-2" aria-label="Close" data-bs-dismiss="modal"></button>
+      </form>
+    </div>
+
+    <div class="modal-body">
+      <%= @form.html_safe %>
+    </div>
+  </div>
+</div>

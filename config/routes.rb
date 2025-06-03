@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :inss
   resources :proponents
+  resources :users, only: %i[index update]
 
   namespace :public do
     resources :proponents, only: %i[index create]

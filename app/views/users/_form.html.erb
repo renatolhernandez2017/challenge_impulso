@@ -1,0 +1,15 @@
+<%= turbo_frame_tag 'form_user' do %>
+  <%= form_with model: user, url: user.persisted? ? user_path(user) : users_path do |f| %>
+    <section class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <%= render TextFieldComponent.new(form: f, field_name: :name, label: "Nome", error_message: user.errors.messages[:name]) %>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <%= render TextFieldComponent.new(form: f, field_name: :email, label: "E-mail", error_message: user.errors.messages[:email]) %>
+      </div>
+
+      <%= render ButtonComponent.new(form: f, label: btn_save) %>
+    </section>
+  <% end %>
+<% end %>
