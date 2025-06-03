@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :contact do
     proponent { nil }
-    contact_type { 1 }
-    value { "MyString" }
+    contact_type { "email" }
+    value { "fulano@email.com" }
   end
 end

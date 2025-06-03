@@ -1,9 +1,15 @@
 FactoryBot.define do
   factory :proponent do
-    name { "MyString" }
-    document { "MyString" }
-    birth_date { "2025-06-02" }
-    salary { "9.99" }
-    inss_discount { "9.99" }
+    name { "João da Silva" }
+    salary { rand(500..10_000) }
+    document { "12345678900" }
+    birth_date { "1989-06-02" }
+    inss_discount { 200.0 }
+    created_at { Time.current }
+
+    after(:build) do |proponent|
+      proponent.addresses << build(:address, proponent: proponent)
+      proponent.contacts << build(:contact, proponent: proponent)
+    end
   end
 end
