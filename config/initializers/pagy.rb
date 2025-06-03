@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pagy/extras/bootstrap'
+
 # Pagy initializer file (8.4.4)
 # Customize only what you really need and notice that the core Pagy works also without any of the following lines.
 # Should you just cherry pick part of this file, please maintain the require-order of the extras
@@ -11,7 +13,7 @@
 # Here are the few that make more sense as DEFAULTs:
 Pagy::DEFAULT[:limit] = 5                            # default
 Pagy::DEFAULT[:items] = 5                            # default
-Pagy::DEFAULT[:pagy_path] = Rails.root.join("app", "assets", "stylesheets", "pagy.tailwind.css")
+Pagy::DEFAULT[:pagy_path] = Rails.root.join("app", "assets", "stylesheets", "pagy.tailwind.css", "application.css")
 # Pagy::DEFAULT[:size]        = [1,4,4,1]             # default in pagy < 7.0
 # Pagy::DEFAULT[:page_param]  = :page                 # default
 # Pagy::DEFAULT[:count_args]  = []                    # example for non AR ORMs

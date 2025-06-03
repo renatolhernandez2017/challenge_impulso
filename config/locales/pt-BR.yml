@@ -8,8 +8,8 @@ pt-BR:
       proponent: Proponente
   attributes:
     contact:
-      contact_type:
-        residential_phone: "Telefone residencial"
+      contact_types:
+        residential_phone: "Telefone Residencial"
         mobile: "Celular"
         whatsapp: "WhatsApp"
         email: "E-mail"

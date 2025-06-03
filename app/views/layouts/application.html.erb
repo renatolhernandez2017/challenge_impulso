@@ -31,6 +31,14 @@
       <% end %>
     </div>
 
-    <%= yield %>
+    <div class="main">
+      <%= render "layouts/sidebar" unless show_sidebar? %>
+
+      <div class="content">
+        <%= render "layouts/header" unless show_sidebar? %>
+
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

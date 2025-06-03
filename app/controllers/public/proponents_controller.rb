@@ -33,6 +33,6 @@ class Public::ProponentsController < ApplicationController
   end
 
   def set_contact_types
-    @contact_types = Contact.contact_types.keys.map { |type| [t("attributes.contact.contact_type.#{type}"), type] }
+    @contact_types = Contact.contact_types.keys.map { |type| [t("attributes.contact.contact_types.#{type}"), type] }
   end
 end

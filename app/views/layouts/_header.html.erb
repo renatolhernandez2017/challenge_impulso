@@ -1,0 +1,24 @@
+<header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand fw-bold" do %>
+      <i class="bi bi-speedometer2 me-2"></i>Dashboard Impulso
+    <% end %>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto mb-lg-0">
+        <li>
+          <%= link_to "#", class: "d-flex align-items-center text-decoration-none" do %>
+            <img src="https://github.com/mdo.png" alt="Foto" width="35" height="35" class="rounded-circle me-2">
+            <strong class="text-white me-3"><%= current_user.email %></strong>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to destroy_user_session_path, class: "btn btn-danger btn-sm", data: { turbo_method: :delete }, title: "Sair" do %>
+            Sair
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

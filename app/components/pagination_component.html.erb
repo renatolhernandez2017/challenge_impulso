@@ -1,0 +1,32 @@
+<% if @pagy.pages > 1 %>
+  <nav aria-label="Paginação" class="d-flex justify-content-center my-4">
+    <ul class="pagination">
+      <%= tag.li class: "page-item #{'disabled' unless @pagy.prev}" do %>
+        <% if @pagy.prev %>
+          <%= link_to "&laquo;".html_safe, url_for(page: @pagy.prev), class: "page-link", aria: { label: "Anterior" } %>
+        <% else %>
+          <%= tag.span "&laquo;".html_safe, class: "page-link" %>
+        <% end %>
+      <% end %>
+
+      <% (1..@pagy.pages).each do |num| %>
+        <% active = num == @pagy.page %>
+        <%= tag.li class: "page-item #{'active' if active}", aria: (active ? { current: 'page' } : {}) do %>
+          <% if active %>
+            <%= tag.span num, class: "page-link", style: "background-color: #0d6efd; color: #fff;" %>
+          <% else %>
+            <%= link_to num, url_for(page: num), class: "page-link" %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <%= tag.li class: "page-item #{'disabled' unless @pagy.next}" do %>
+        <% if @pagy.next %>
+          <%= link_to "&raquo;".html_safe, url_for(page: @pagy.next), class: "page-link", aria: { label: "Próxima" } %>
+        <% else %>
+          <%= tag.span "&raquo;".html_safe, class: "page-link" %>
+        <% end %>
+      <% end %>
+    </ul>
+  </nav>
+<% end %>

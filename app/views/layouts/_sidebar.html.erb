@@ -1,0 +1,17 @@
+<nav class="sidebar bg-dark vh-100 d-flex flex-column p-3 text-white">
+  <%= link_to root_path, class: "d-flex justify-content-center" do %>
+    <span class="fs-4">Impulso</span>
+  <% end %>
+
+  <hr class="text-secondary">
+
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <%= link_to "Dashboard", root_path, class: "nav-link #{current_page?(root_path) ? 'active' : ''} text-white hover-text-white" %>
+    </li>
+
+    <li>
+      <%= link_to "Proponentes", proponents_path, class: "nav-link #{current_page?(proponents_path) ? 'active' : ''} text-white hover-text-white" %>
+    </li>
+  </ul>
+</nav>

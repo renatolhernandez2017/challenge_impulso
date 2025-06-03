@@ -1,2 +1,83 @@
-<h1>Proponents#index</h1>
-<p>Find me in app/views/proponents/index.html.erb</p>
+<div class="row my-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Documento</th>
+        <th>Data de Nascimento</th>
+        <th>Salário</th>
+        <th>Desconto INSS</th>
+        <th>Contatos</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @proponents.each_with_index do |proponent, index| %>
+        <tr>
+          <td><%= proponent.name %></td>
+
+          <td>
+            <input type="text" value="<%= proponent.document %>" data-controller="mask" data-mask-target="cpfMask" class="form-control-plaintext" readonly />
+          </td>
+
+          <td><%= proponent.birth_date.strftime("%d/%m/%Y") %></td>
+          <td><%= number_to_currency(proponent.salary) %></td>
+          <td><%= number_to_currency(proponent.inss_discount) %></td>
+
+          <td data-controller="toggle" data-action="click->toggle#toggleRow" data-tr-id="tr_hidden_<%= index %>">
+            <details>
+              <summary class="collapse-title font-semibold d-inline-block d-flex">
+                Expandir
+                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+              </summary>
+            </details>
+          </td>
+        </tr>
+
+        <tr class="d-none" id="tr_hidden_<%= index %>">
+          <td colspan="8">
+            <table class="table table-striped">
+              <thead class="text-base">
+                <tr>
+                  <th>Contatos</th>
+                  <th>Endereços</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>
+                    <% proponent.contacts.each do |contact| %>
+                      <div>
+                        <strong><%= t("attributes.contact.contact_types.#{contact.contact_type}") %>:</strong>
+
+                        <% if contact.contact_type == "email" %>
+                          <%= contact.value %>
+                        <% else %>
+                          <span class="ms-2">
+                            <input type="text" value="<%= contact.value %>" data-controller="mask" data-mask-target="mobileMask" class="form-control-plaintext d-inline align-middle p-0 m-0 bg-transparent border-0" readonly style="width:auto;" />
+                          </span>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </td>
+
+                  <td>
+                    <% proponent.addresses.each do |address| %>
+                      <div>
+                        <%= address.street %>, <%= address.number %> - <%= address.neighborhood %> -
+                        <%= address.city %> - <%= address.state %> - CEP: <%= address.zip_code %>
+                      </div>
+                    <% end %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= render PaginationComponent.new(pagy: @pagy) %>
+</div>
