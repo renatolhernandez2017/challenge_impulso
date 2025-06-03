@@ -12,7 +12,7 @@
   - Via HTTPS: git clone https://github.com/renatolhernandez2017/challenge_impulso.git
 
   ### Acessar terminal e entrar na pasta onde está o projeto:
-  - cd desafio/
+  - cd challenge_impulso/
 
   ### Para abrir o projeto no VsCode:
   - Rode o comando -> code .
